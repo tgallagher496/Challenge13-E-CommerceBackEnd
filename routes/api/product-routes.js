@@ -30,14 +30,14 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({message: 'No such Product ID exists'})
       return;
     }
-    res.status(200).json(productID);
+    res.status(200).json(productId);
   } catch (err){
     res.status(500).json(err);
   }
 });
 
 // create new product
-router.post('/', async(req, res) => {
+router.post('/', (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -69,7 +69,7 @@ router.post('/', async(req, res) => {
 });
 
 // update product
-router.put('/:id', async(req, res) => {
+router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {

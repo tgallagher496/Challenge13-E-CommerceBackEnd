@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({message: 'No such Product ID exists'})
       return;
     }
-    res.status(200).json(tagID);
+    res.status(200).json(tagId);
   } catch (err){
     res.status(500).json(err);
   }
